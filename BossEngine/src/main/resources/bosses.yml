@@ -1,0 +1,43 @@
+bosses:
+  chuate_bongdem:
+    name: "&4&l[BOSS] Chúa Tể Bóng Đêm"
+    entity-type: ZOMBIE
+    model-id: "shadow_lord" # ID của Model trong Model Engine
+    
+    # Cấu hình Animation từ Blockbench gán vào Model Engine
+    animations:
+      spawn: "spawn"        # Hoạt ảnh khi vừa xuất hiện
+      attack: "attack"      # Hoạt ảnh khi đánh trúng người chơi
+      skill: "cast"         # Hoạt ảnh khi gồng tuyệt chiêu
+    
+    max-health: 2500.0
+    damage: 45.0            # Sát thương cơ bản
+    defense: 35.0           # Kháng 35% sát thương nhận vào
+    
+    bossbar:
+      color: "PURPLE"       # RED, BLUE, PURPLE, GREEN, YELLOW
+      style: "NOTCHED_10"   # SOLID, NOTCHED_6, NOTCHED_10, NOTCHED_12, NOTCHED_20
+      
+    dialogues:
+      on-hit:
+        - "&cNgươi không xuyên qua được lớp giáp của ta đâu!"
+        - "&4Bóng tối sẽ nuốt chửng linh hồn của ngươi!"
+      on-skill:
+        - "&4&lHÃY NẾM THỬ PHẪN NỘ CỦA THẦN SẤM!"
+
+    # Tuyệt chiêu kích hoạt khi còn 50% máu
+    skills:
+      hp-threshold: 50
+      # Lệnh gọi bão sét giật xung quanh Boss
+      command: "execute at %boss_uuid% run summon lightning_bolt ~ ~ ~"
+
+    # Danh sách rớt đồ (Drop)
+    drops:
+      - item: NETHERITE_SWORD
+        name: "&4&lKiếm Diệt Thế 26.3"
+        chance: 40.0 # 40% tỉ lệ
+        lore:
+          - "&7Vũ khí huyền thoại rơi từ Chúa Tể."
+      - item: DIAMOND
+        name: "&bKim Cương Cổ Đại"
+        chance: 100.0

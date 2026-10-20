@@ -1,0 +1,9 @@
+name: BossEngine
+version: 26.3
+main: com.bossengine.BossEngine
+api-version: '1.20'
+softdepend: [ModelEngine]
+commands:
+  boss:
+    description: Hệ thống Boss và Animation chuyên dụng
+    permission: boss.admin
